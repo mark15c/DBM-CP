@@ -1,0 +1,10 @@
+pandas==2.2.3
+numpy==2.4.0
+pyarrow==23.0.1
+scikit-learn==1.8.0
+statsmodels==0.14.6
+scorecardpy==0.1.9.7
+scipy==1.17.1
+joblib==1.5.3
+catboost==1.2.10
+jupyter==1.1.1
