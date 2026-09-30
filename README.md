@@ -34,9 +34,13 @@ Las rutas se resuelven automáticamente si los notebooks se abren desde la raíz
 
 ## Requisitos
 
-- Python 3.11.9
+- Python 3.11.9 (versión de referencia). Rango que funciona: 3.11 a 3.13.
+  - Mínimo 3.11: `numpy==2.4.0`, `scikit-learn==1.8.0` y `scipy==1.17.1` no se instalan en versiones anteriores.
+  - Máximo 3.13: `pandas==2.2.3` no publica paquetes precompilados para Python 3.14; pip intentaría compilarlo desde el código fuente y la instalación probablemente fallaría.
 - El archivo `data/raw/base_analytics_lab_061628.parquet` debe permanecer incluido.
-- `requirements.txt` fija una combinación compatible de dependencias. En particular, no debe actualizarse Pandas a la versión 3 o superior, porque esa versión deja de ser compatible con `scorecardpy==0.1.9.7`.
+- `requirements.txt` fija una combinación compatible de dependencias. Instalar siempre con `pip install -r requirements.txt` y no usar `pip install -U` sobre el entorno. En particular:
+  - No debe actualizarse Pandas a la versión 3 o superior, porque esa versión deja de ser compatible con `scorecardpy==0.1.9.7`.
+  - `setuptools` debe quedar en una versión menor a 81. `scorecardpy` importa `pkg_resources`, que se eliminó en setuptools 81; con una versión posterior, `import scorecardpy` falla. `requirements.txt` ya incluye esta restricción (`setuptools<81`).
 
 Desde la raíz de esta carpeta, crear un entorno e instalar las dependencias:
 
@@ -47,7 +51,19 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+Si PowerShell bloquea `Activate.ps1` por la política de ejecución de scripts, ejecutar primero en esa misma terminal:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
 ## Orden exacto de ejecución
+
+Con el entorno `.venv` activado, iniciar Jupyter desde la raíz de esta carpeta:
+
+```powershell
+jupyter lab
+```
 
 1. Abrir `notebooks/01_desarrollo_modelo_logistico.ipynb`.
 2. Elegir **Restart Kernel and Run All Cells** y esperar que termine sin errores.
@@ -73,7 +89,9 @@ Con la política `PD < 20%`:
 | VALIDATION | 74.56% | 8.02% | 59.99% |
 | OOT | 73.47% | 6.96% | 63.82% |
 
-CatBoost queda como benchmark: mejora el Gini OOT en aproximadamente 1.64 puntos, pero no reemplaza la logística por criterios de explicabilidad, auditabilidad y facilidad de implementación.
+Los resultados de CatBoost dependen del número de hilos (`thread_count`). El notebook 03 no lo fija, así que CatBoost usa todos los núcleos de la máquina. Las cifras de esta tabla se obtuvieron con 16 hilos. En una máquina con otro número de núcleos, el Gini de VALIDATION y OOT puede diferir en el tercer o cuarto decimal (por ejemplo, 0.6086 en OOT con 12 hilos y 0.6083 con 20 hilos), y el de TRAIN puede diferir desde el segundo decimal (por ejemplo, 0.7337 con 20 hilos). Esa diferencia no indica un problema del entorno. Para reproducir las cifras exactas, agregar `thread_count=16` a los parámetros de `CatBoostClassifier`.
+
+CatBoost queda como benchmark: mejora el Gini OOT en aproximadamente 1.6 puntos (1.64 con 16 hilos; 1.55 con 20 hilos), pero no reemplaza la logística por criterios de explicabilidad, auditabilidad y facilidad de implementación.
 
 ## Artefacto de producción
 
