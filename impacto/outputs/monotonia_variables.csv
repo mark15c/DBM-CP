@@ -1,0 +1,19 @@
+﻿variable,iv,direccion_OOT,direccion_TRAIN
+MEDIDA1_MORA_INTERNA_U6M,0.4703,creciente,creciente
+MEDIDA1_MORA_INTERNA_U1M,0.3011,creciente,creciente
+MEDIDA1_MORA_SSFF_U36M,0.2771,decreciente,decreciente
+MEDIDA2_MORA_INTERNA_U6M,0.1742,decreciente,decreciente
+MEDIDA1_DESAPALANCAMIENTO_SSFF_U12M,0.1295,decreciente,decreciente
+MEDIDA3_APALANCAMIENTO_INTERNO_U1M,0.125,no monótona,no monótona
+MEDIDA1_DESAPALANCAMIENTO_INTERNO_U12M,0.1229,decreciente,decreciente
+MEDIDA2_CALIFICACION_SSFF_U60M,0.1229,decreciente,decreciente
+MEDIDA1_APALANCAMIENTO_SSFF_U36M,0.1197,creciente,creciente
+MEDIDA1_CALIFICACION_SSFF_U60M,0.1154,creciente,creciente
+MEDIDA3_APALANCAMIENTO_SSFF_U12M,0.0962,creciente,creciente
+MEDIDA1_APALANCAMIENTO_INTERNO_U6M,0.0839,creciente,creciente
+SOCIODEMOGRAFICO_1,0.0781,creciente,creciente
+MEDIDA1_PRODUCTOS_SSFF_U1M,0.0454,no monótona,creciente
+MEDIDA1_ANTIGUEDAD_SSFF,0.0442,decreciente,decreciente
+MEDIDA1_LINEA_TARJETACREDITO,0.0388,decreciente,decreciente
+DEUDA_PROMEDIO_SSFF,0.0315,no monótona,decreciente
+MEDIDA1_TRX_CASHIN_U3M,0.0191,creciente,creciente

@@ -1,0 +1,4 @@
+﻿modelo,variables,Gini_TRAIN,Gini_VALIDATION,Gini_OOT,AUC_TRAIN,AUC_VALIDATION,AUC_OOT,KS_TRAIN,KS_VALIDATION,KS_OOT,caida_gini_train_oot_pts,fuente
+Modelo actual del banco,n.d.,0.475933,0.420399,0.44458,0.737967,0.7102,0.72229,0.338764,0.297803,0.324376,3.135366,Calculado sobre la columna PREDICCION_MODELO_ANTERIOR
+Regresión Logística WOE,18,0.599015,0.581576,0.592741,0.799507,0.790788,0.79637,0.445362,0.432179,0.449504,0.627391,Calculado con model/modelo_logistico_woe.pkl
+CatBoost (benchmark),45,0.726198,0.616186,0.60914,0.863099,0.808093,0.80457,0.554235,0.460563,0.462571,11.7058,Reportado en notebooks/03_benchmark_catboost.ipynb

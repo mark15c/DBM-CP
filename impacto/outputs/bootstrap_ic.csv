@@ -1,0 +1,4 @@
+﻿metrica,estimado,media_bootstrap,ic95_inf,ic95_sup,prob_ahorro_positivo,replicas
+ahorro_total,1543230.0,1545929.125,1361848.25,1729971.75,1.0,1000
+ahorro_politica,868870.0,870605.415,692120.625,1048194.375,1.0,1000
+ahorro_modelo,674360.0,675323.71,530687.25,822621.5,1.0,1000

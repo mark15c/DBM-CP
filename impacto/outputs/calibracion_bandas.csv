@@ -1,0 +1,15 @@
+﻿muestra,banda_pd,clientes,pd_promedio_pct,bad_rate_pct,gap_pp,p_value_independencia,vasicek_rho_0.5pct_compatible,vasicek_rho_1pct_compatible,vasicek_rho_2pct_compatible,vasicek_rho_3pct_compatible,compatible_independencia,compatible_vasicek_todos_rho
+VALIDATION,0%-5%,2655,2.7265,2.9379,-0.2113,0.5023,True,True,True,True,True,True
+VALIDATION,5%-10%,2343,7.3944,6.5728,0.8217,0.128,True,True,True,True,True,True
+VALIDATION,10%-15%,1718,12.3804,11.4668,0.9136,0.2498,True,True,True,True,True,True
+VALIDATION,15%-20%,1175,17.354,17.3617,-0.0077,0.9944,True,True,True,True,True,True
+VALIDATION,20%-30%,1193,24.1481,20.7041,3.444,0.0053,True,True,True,True,False,True
+VALIDATION,30%-40%,581,34.5475,34.0792,0.4684,0.812,True,True,True,True,True,True
+VALIDATION,40%+,918,57.6278,54.902,2.7259,0.0817,True,True,True,True,True,True
+OOT,0%-5%,2600,2.7386,2.6923,0.0463,0.8846,True,True,True,True,True,True
+OOT,5%-10%,2408,7.4041,5.9385,1.4655,0.0059,True,True,True,True,False,True
+OOT,10%-15%,1711,12.3341,8.6499,3.6842,0.0,False,False,True,True,False,False
+OOT,15%-20%,1330,17.3449,14.9624,2.3825,0.0216,True,True,True,True,False,True
+OOT,20%-30%,1295,24.2484,19.9228,4.3256,0.0003,False,True,True,True,False,False
+OOT,30%-40%,552,34.4361,32.4275,2.0085,0.3197,True,True,True,True,True,True
+OOT,40%+,1059,58.217,52.0302,6.1868,0.0,False,True,True,True,False,False
